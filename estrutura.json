@@ -1,33 +1,4 @@
 {
-  "name": "api-ai-facebook",
-  "version": "1.0.0",
-  "description": "API.AI Facebook Bot",
-  "main": "src/app.js",
-  "scripts": {
-    "start": "node src/app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "Danil Skachkov <danil.skachkov@speaktoit.com> (https://api.ai)",
-  "license": "ISC",
-  "dependencies": {
-    "apiai": "^2.0.1",
-    "body-parser": "^1.15.0",
-    "express": "4.13.3",
-    "html-entities": "^1.2.0",
-    "node-uuid": "^1.4.7",
-    "request": "^2.71.0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/api-ai/api-ai-facebook"
-  }
-}
-
-
-
-POST body:
-
-{
   "id": "cfcbd337-6b66-4393-a6a3-74fc5487cedb",
   "timestamp": "2016-02-16T00:30:13.529Z",
   "result": {
@@ -39,6 +10,13 @@ POST body:
       "name": "Sam"
     },
     "contexts": [
+      {
+        "name": "user_name",
+        "parameters": {
+          "name": "Sam"
+        },
+        "lifespan": 5
+      },
       {
         "name": "greetings",
         "parameters": {
@@ -52,34 +30,11 @@ POST body:
       "intentName": "Greetings"
     },
     "fulfillment": {
-      "speech": "Hi Sam! How can I help you?
-      
-      curl -X POST -H "Content-Type: application/json" -d '{
-  "recipient":{
-    "id":"USER_ID"
+      "speech": "Hi Sam! How can I help you?"
+    }
   },
-  "message":{
-    "attachment":{
-      "type":"template",
-      "payload":{
-        "template_type":"button",
-        "text":"What do you want to do next?",
-        "buttons":[
-          {
-            "type":"web_url",
-            "url":"https://petersapparel.parseapp.com",
-            "title":"Show Website"
-          },
-          {
-            "type":"postback",
-            "title":"Start Chatting",
-            "payload":"USER_DEFINED_PAYLOAD"
-          }
-        ]
-      }
-    }
-  }
-}' "https://graph.facebook.com/v2.6/me/messages?access_token=<PAGE_ACCESS_TOKEN>"
-    }
+  "status": {
+    "code": 200,
+    "errorType": "success"
   }
 }
