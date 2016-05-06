@@ -1,0 +1,36 @@
+curl -X POST -H "Content-Type: application/json" -d '{
+  "setting_type":"call_to_actions",
+  "thread_state":"new_thread",
+  "call_to_actions":[
+    {
+      "message":{
+        "attachment":{
+          "type":"template",
+          "payload":{
+            "template_type":"generic",
+            "elements":[
+              {
+                "title":"Welcome to My Company!",
+                "item_url":"https://www.petersbowlerhats.com",
+                "image_url":"https://www.petersbowlerhats.com/img/hat.jpeg",
+                "subtitle":"We have the right hat for everyone.",
+                "buttons":[
+                  {
+                    "type":"web_url",
+                    "title":"View Website",
+                    "url":"https://www.petersbowlerhats.com"
+                  },
+                  {
+                    "type":"postback",
+                    "title":"Start Chatting",
+                    "payload":"DEVELOPER_DEFINED_PAYLOAD"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      }
+    }
+  ]
+}' "https://graph.facebook.com/v2.6/fiuzadesign1 / thread_settings? Access_token= EAAEcpScoHZCkBAL3x8BilBhKB6xYIkecYa9pi9IN0lmvvW1wdQnMTZAnTctUJfhVnSVakY7EzbJi16Vr3J3RnMgj02ZAIuvt0Qj4jVSmD0ZAkPCHOAL8Y8aYk9NUIZCJajuE7PfUBht49rWjIBb4ldfRaD6acDQ7Hhv293O9NSgZDZD"
